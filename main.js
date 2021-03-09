@@ -2,7 +2,7 @@ var order = {
     toppings: 0,
     crust: 0,
     size:0,
-    pSize:"na"
+    pSize:"small"
   };
 
 function getCost(name) {
@@ -51,22 +51,37 @@ function getCost(name) {
 function checkToppings(id){
     let toppingsCount = 0;
     var toppings =  document.getElementsByName("toppings");
-    for(let i = 0; i < toppings.length; i++){
-        console.log(toppings[i].checked);
-        console.log(toppings[i].name);
 
-        if(toppings[i].checked == true){
-            console.log(toppingsCount);
-            toppingsCount++;
-        }
-
-        if(toppingsCount > 3){
-            alert("You may only select 3 toppings.");
-            document.getElementById(id).checked = false;
-            i = toppings.length;
+    var size = document.getElementsByName("size");
+    let sizeFlag = false;
+    for(let i = 0; i < size.length; i++){
+        if(size[i].checked == true){
+            sizeFlag = true;
         }
     }
-    getCost('toppings');
+    if(sizeFlag == true){
+        for(let i = 0; i < toppings.length; i++){
+            console.log(toppings[i].checked);
+            console.log(toppings[i].name);
+
+            if(toppings[i].checked == true){
+                console.log(toppingsCount);
+                toppingsCount++;
+            }
+
+            if(toppingsCount > 3){
+                alert("You may only select 3 toppings.");
+                document.getElementById(id).checked = false;
+                i = toppings.length;
+            }
+        }
+        getCost('toppings');
+    }
+    else{
+        alert("Please choose a pizza size before toppings");
+        let invalid = document.getElementById(id);
+        invalid.checked = false;
+    }
     
 }
 
