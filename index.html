@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <title>Stager's Pizza Calculator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1″>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+    <div class =  "title">
+        <h1>Stager's Pizza </h1>
+        </br>
+        <p>by Steven Bollman</p>
+
+    </div>
+
+    <div class = "order">
+        <div class = "instructions">
+            <p>Please select your Pizza options. </p>
+            <p id = "total">Your Current Total: $0.00</p>
+            <button id="placeOrder" onClick = "placeOrder();">Place Order</button>
+        </div>
+
+        <div class = "buttons">
+            <p>Crust Type</p>
+            <input type="radio" onClick = "getCost('crust');" id="Thin" name="crust" value='0.00'>
+            <label for="Thin">Thin</label>
+            <input type="radio" onClick = "getCost('crust');" id="deep" name="crust" value='5.00'>
+            <label for="deep">Deep Dish</label>
+            <input type="radio" onClick = "getCost('crust');" id="regular" name="crust" value='2.00'>
+            <label for="Regular">Regular</label>
+            
+            <p>Pizza Size</p>
+            <input type="radio" onClick = "getCost('size');" id="small" name="size" value='10.00'>
+            <label for="small">Small</label>
+            <input type="radio" onClick = "getCost('size');" id="medium" name="size" value='15.00'>
+            <label for="medium">Medium</label>
+            <input type="radio" onClick = "getCost('size');" id="large" name="size" value='20.00'>
+            <label for="large">Large</label>
+
+            <p>Sauce</p>
+            <input type="radio" onClick = "getCost('sauce');" id="red" name="sauce" value="0.00">
+            <label for="red">Red</label>
+            <input type="radio" onClick = "getCost('sauce');" id="white" name="sauce" value="0.00">
+            <label for="white">White</label>
+            <input type="radio" onClick = "getCost('sauce');" id="green" name="sauce" value="0.00">
+            <label for="green">Green</label>
+
+            <p>Cheese</p>
+            <input type="radio" id="Thin" name="cheese" value="0.00" checked>
+            <label for="Thin">Mozzarella</label>
+
+
+            <p>Toppings</p>
+            <input type="checkbox" onClick ="checkToppings('pepperoni');" id="pepperoni" name="toppings" value='1.00'>
+            <label for="pepperoni">Pepperoni</label>
+            <input type="checkbox" onClick ="checkToppings('sausage');" id="sausage" name="toppings" value='1.00'>
+            <label for="sausage">Sausage</label>
+            <input type="checkbox" onClick ="checkToppings('onion');" id="onion" name="toppings" value='1.00'>
+            <label for="onion">Onion</label>
+            <input type="checkbox" onClick ="checkToppings('garlic');" id="garlic" name="toppings" value='1.00'>
+            <label for="garlic">Garlic</label>
+            <input type="checkbox" onClick ="checkToppings('greenpepper');" id="greenpepper" name="toppings" value='1.00'>
+            <label for="greenpepper">Green Peppers</label>
+            <input type="checkbox" onClick ="checkToppings('mushrooms');" id="mushrooms" name="toppings" value='1.00'>
+            <label for="mushrooms">Mushrooms</label>
+            <input type="checkbox" onClick ="checkToppings('olives');" id="olives" name="toppings" value='1.00'>
+            <label for="olives">Olives</label>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>
